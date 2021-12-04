@@ -1,5 +1,9 @@
 function msmPRNG(seed, num_of_digits) {
-    // generate a pseudo-random number using the middle square method
+    /****************************************************
+    * Generate a pseudo-random number using the middle 
+    * square method.
+    ****************************************************/
+
     var n, start, end;
     // square the seed and multiply by the seed if length is < 2n
     n = seed ** 2; (seed * seed).toString();
@@ -15,11 +19,16 @@ function msmPRNG(seed, num_of_digits) {
 }
 
 function lcgPRNG(seed, a, c, m) {
-    // generate a pseudo-random number using the linear congruential generator algorithm
-    // seed (0 <= seed < m) is initial value provided to algorithm
-    // a (0 < a < m) is the multiplier
-    // c (0 <= c < m) is the increment
-    // m (0 < m) is the modulus
+    /****************************************************
+    * Generate a pseudo-random number using the linear 
+    * congruential generator algorithm.
+    *
+    * seed (0 <= seed < m) is initial value provided to algorithm
+    * a (0 < a < m) is the multiplier
+    * c (0 <= c < m) is the increment
+    * m (0 < m) is the modulus
+    ****************************************************/
+
     seed = (a * seed * c) % m;
     return seed / m;
 }
@@ -35,5 +44,8 @@ function testPRNGs() {
 
 testPRNGs()
 
-// Sources
-// - https://www.codespeedy.com/building-pseudo-random-number-generator-from-scratch-in-javascript/
+
+/****************************************************
+* Sources
+* - https://www.codespeedy.com/building-pseudo-random-number-generator-from-scratch-in-javascript/
+****************************************************/
