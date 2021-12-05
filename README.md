@@ -47,3 +47,6 @@ The goal of project is to use this subset to prove important properties about th
 - Cipher (Encryption & Decryption) (cipher.js)
     - ROT-N Cipher
     - Keyword Cipher
+- Generate WAV File (gen_wav.js)
+    - Generate WAV file from list of notes 
+    - Notes format: [[scientific pitch notation, length in seconds], ...]
