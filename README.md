@@ -4,6 +4,7 @@ This project uses a subset of the JavaScript language that is described below.
 
 The goal of project is to use this subset to prove important properties about the programs written in this subset. We have a formal model and semantics describing this subset, as well as key properties of the transformations applied on these programs.
 
+
 ## Subset
 1. Identifiers (e.g. `myVal`, `result`, `y4`)
 2. Variable declaration (e.g. `var x`) 
@@ -26,15 +27,23 @@ The goal of project is to use this subset to prove important properties about th
 16. if else statement (e.g. `if (condition) { expression } else { expression }`)
 17. while loop (e.g. `while (condition) { expression }`)
 18. require (import module) (e.g. `require("path/file_name.js")`)
+    - Can't use `import`
 19. export module (`module.exports = {field1:value1, ..., fieldN:valueN}`)
 20. console.log (e.g. `console.log("string to print")`)
 
+
 ## Additional Notes
-- Can **NOT** use new features in ES6 and later JavaScript versions (e.g. `async` and `await`)
-- **CAN** use objects such as `Math` and `String`
-- Can **NOT** use `import`
+- Not allowed
+    - New features in ES6 and later JavaScript versions
+    - `class`, `constructor`, `this`
+- Allowed objects
+    - `Math` and `String`
+
 
 ## Programs
 - Pseudo-Random Number Generators (prng.js)
     - Middle Square Method
     - Linear Congruent Generator Algorithm
+- Cipher (Encryption & Decryption) (cipher.js)
+    - ROT-N Cipher
+    - Keyword Cipher
