@@ -46,6 +46,6 @@ testPRNGs()
 
 
 /****************************************************
-* Sources
+* Sources:
 * - https://www.codespeedy.com/building-pseudo-random-number-generator-from-scratch-in-javascript/
 ****************************************************/

@@ -50,3 +50,5 @@ The goal of project is to use this subset to prove important properties about th
     - Notes format: [[scientific pitch notation, length in seconds], ...]
 - Sorting Algorithms (sort.js)
     - Algorithms: bubble sort, insertion sort, selection sort, merge sort, and quick sort
+- Search Algorithms (search.js)
+    - Algorithms: sequential search, binary search, find min/max value

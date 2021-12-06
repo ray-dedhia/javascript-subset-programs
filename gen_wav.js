@@ -83,3 +83,8 @@ function test() {
 }
 
 test();
+
+/****************************************************
+* Sources: 
+* - https://dsp.stackexchange.com/questions/53125/write-a-440-hz-sine-wave-to-wav-file-using-python-and-scipy
+****************************************************/
