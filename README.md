@@ -42,11 +42,11 @@ The goal of project is to use this subset to prove important properties about th
 
 ## Programs
 - Pseudo-Random Number Generators (prng.js)
-    - Middle Square Method
-    - Linear Congruent Generator Algorithm
+    - Middle square method and linear congruent generator algorithm
 - Cipher (Encryption & Decryption) (cipher.js)
-    - ROT-N Cipher
-    - Keyword Cipher
+    - ROT-N cipher and keyword cipher
 - Generate WAV File (gen_wav.js)
     - Generate WAV file from list of notes 
     - Notes format: [[scientific pitch notation, length in seconds], ...]
+- Sorting Algorithms (sort.js)
+    - Algorithms: bubble sort, insertion sort, selection sort, merge sort, and quick sort
