@@ -51,3 +51,4 @@ The goal of project is to use this subset to prove important properties about th
 - Search Algorithms (search.js)
     - Algorithms: sequential search, binary search, find min/max value
 - K-means Clustering Algorithm (kmeans.js)
+- Base64 Encoding and Decoding (base64.js)
