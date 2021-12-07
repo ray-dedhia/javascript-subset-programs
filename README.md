@@ -35,7 +35,7 @@ The goal of project is to use this subset to prove important properties about th
 
 ## Additional Notes
 - Not allowed: New features in ES6 and later JavaScript versions
-- Not allowed: `class`, `constructor`, `this`, `for`, `try...catch`, `await`, `async`
+- Not allowed: `class`, `constructor`, `this`, `for`, `try...catch`, `await`, `async`, `throw`
 - Allowed: Most of the built-in objects, especially the ones from ES5
     - E.g. `Math`, `String`, `Array`
 - Not allowed: Imports that (1) aren't written in the subset, or (2) depend on modules that aren't written in the subset
@@ -50,3 +50,4 @@ The goal of project is to use this subset to prove important properties about th
     - Algorithms: bubble sort, insertion sort, selection sort, merge sort, and quick sort
 - Search Algorithms (search.js)
     - Algorithms: sequential search, binary search, find min/max value
+- K-means Clustering Algorithm (kmeans.js)
