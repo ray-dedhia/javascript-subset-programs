@@ -3,11 +3,12 @@ function msmPRNG(seed, num_of_digits) {
     * Generate a pseudo-random number using the middle 
     * square method.
     ****************************************************/
-
-    var n, start, end;
+    var n; 
+    var start; 
+    var end;
     // square the seed and multiply by the seed if length is < 2n
     n = seed ** 2; (seed * seed).toString();
-    while(n.toString().length < num_of_digits * 2 ) {
+    while (n.toString().length < num_of_digits * 2) {
         n *= seed;
     }
     // take the middle n digits from the squared seed
@@ -34,7 +35,9 @@ function lcgPRNG(seed, a, c, m) {
 }
 
 function testPRNGs() {
-    var seed, msmRand, lcgRand;
+    var seed; 
+    var msmRand;
+    var lcgRand;
     seed = new Date().getMilliseconds();
     msmRand = msmPRNG(seed, 4);
     console.log(msmRand);

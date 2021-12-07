@@ -2,18 +2,23 @@ function bubble_sort(arr) {
     /****************************************************
     * Sort an array using bubble sort
     ****************************************************/
+    var i; 
+    var j; 
+    i = 0;
+    j = 0;
     // outer pass
-    var i, j; 
-    for (i = 0; i < arr.length; i++){
+    while (i < arr.length) {
         // inner pass
-        for (j = 0; j < arr.length - i - 1; j++){
+        while (j < arr.length - i - 1) {
             // value comparison using ascending order
             if (arr[j + 1] < arr[j]){
                 // swapping
                 [arr[j + 1],arr[j]] = [arr[j],arr[j + 1]]
             }
+            j++;
         }
-    };
+        i++;
+    }
     return arr;
 }
 
@@ -22,16 +27,21 @@ function insertion_sort(arr) {
     * Sort an array using insertion sort
     ****************************************************/
     // start from the second element
-    var i, j;
-    for (i = 1; i < arr.length;i++) {
+    var i; 
+    var j;
+    i = 1;
+    while (i < arr.length) {
         // go through the elements behind it
-        for (j = i - 1; j > -1; j--) {
+        j = i - 1;
+        while (j > -1) {
             // value comparison using ascending order.
             if (arr[j + 1] < arr[j]) {
                 // swap
                 [arr[j+1],arr[j]] = [arr[j],arr[j + 1]];
             }
+            j--;
         }
+        i++;
     }
   return arr;
 }
@@ -41,16 +51,21 @@ function selection_sort(arr) {
     * Sort an array using selection sort
     ****************************************************/
     // start passes
-    var min, i, j;
-    for (i = 0; i < arr.length; i++) {
+    var min; 
+    var i; 
+    var j;
+    i = 0;
+    while (i < arr.length) {
         // index of the smallest element to be the i-th element.
         min = i;
 
         // check through the rest of the array for a lesser element
-        for (j = i + 1; j < arr.length; j++) {
+        j = i + 1;
+        while (j < arr.length) {
             if (arr[j] < arr[min]) {
                 min = j;
             }
+            j++;
         }
 
         // compare the indexes
@@ -58,6 +73,7 @@ function selection_sort(arr) {
           // swap
           [arr[i], arr[min]] = [arr[min], arr[i]];
         }
+        i++;
     }
     return arr;
 }
@@ -67,9 +83,11 @@ function merge(left, right) {
     * Helper function called by merge_sort.
     * Merges two arrays.
     ****************************************************/
-    var result, left_index, right_index;
+    var result; 
     result = [];
+    var left_index; 
     left_index = 0;
+    var right_index;
     right_index = 0;
 
     while (left_index < left.length && right_index < right.length) {
@@ -92,9 +110,11 @@ function merge_sort(arr) {
         return arr;
     }
 
-    var middle, left, right;
+    var middle; 
     middle = Math.floor(arr.length / 2); // middle item
+    var left; 
     left = arr.slice(0, middle); // left-side items
+    var right;
     right = arr.slice(middle); // right-side items
 
     return merge(merge_sort(left), merge_sort(right));
@@ -105,27 +125,35 @@ function quick_sort(arr) {
        return arr;
     } 
 
-    var left_arr, right_arr, new_arr, pivot, length, i;
+    var left_arr; 
     left_arr = [];
+    var right_arr; 
     right_arr = [];
+    var new_arr; 
     new_arr = [];
+    var pivot; 
     pivot = arr.pop(); 
+    var length; 
     length = arr.length;
 
-    for (i = 0; i < length; i++) {
+    var i;
+    i = 0;
+    while (i < length) {
         // using pivot value start comparing
         if (arr[i] <= pivot) {
             left_arr.push(arr[i]);
         } else {
             right_arr.push(arr[i]);
         }
+        i++;
     }
 
     return new_arr.concat(quick_sort(left_arr), pivot, quick_sort(right_arr)); 
 }
 
 function test() {
-    var unsorted, sorted;
+    var unsorted; 
+    var sorted;
 
     console.log("Bubble sort");
     unsorted = [4, 10, 16, 36, 7, 0];

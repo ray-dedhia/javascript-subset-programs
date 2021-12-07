@@ -4,10 +4,12 @@ function sequential_search(item, arr) {
     * item is found, else return -1.
     ****************************************************/
     var i;
-    for (i = 0; i < arr.length; i++) {
+    i = 0;
+    while (i < arr.length) {
         if (arr[i] === item) {
             return i;
         }
+        i++;
     }
     // item not found
     return -1;
@@ -17,12 +19,15 @@ function find_min_value(arr) {
     /****************************************************
     * Return minimum value in array
     ****************************************************/
-    var current_min, i;
+    var current_min; 
     current_min = arr[0];
-    for (i = 0; i < arr.length; i++) {
+    var i;
+    i = 0;
+    while (i < arr.length) {
         if (arr[i] < current_min) {
             current_min = arr[i];
         }
+        i++;
     }
     return current_min;
 }
@@ -31,12 +36,15 @@ function find_max_value(arr) {
     /****************************************************
     * Return maximum value in array
     ****************************************************/
-    var current_max, i;
+    var current_max;
     current_max = arr[0];
-    for (i = 0; i < arr.length; i++) {
+    var i;
+    i = 0;
+    while (i < arr.length) {
         if (arr[i] > current_max) {
             current_max = arr[i];
         }
+        i++;
     }
     return current_max;
 }
@@ -46,7 +54,10 @@ function binary_search(item, arr) {
     * Run binary search on array. Return index if found,
     * else return -1.
     ****************************************************/
-	var low, high, mid, guessed;
+	var low; 
+    var high; 
+    var mid; 
+    var guessed;
     low = 0;
     high = arr.length - 1;
 
@@ -69,7 +80,10 @@ function binary_search(item, arr) {
 }
 
 function test() {
-    var arr, item, index, val;
+    var arr; 
+    var item; 
+    var index; 
+    var val;
 
     console.log("Sequential search");
     arr = [2, 5, 3, 7, 8, 10, 15, 18, 24, 111, 12, 19, 87];
