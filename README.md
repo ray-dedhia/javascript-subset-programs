@@ -53,3 +53,4 @@ The goal of project is to use this subset to prove important properties about th
 - K-means Clustering Algorithm (kmeans.js)
 - Base64 Encoding and Decoding (base64.js)
 - Generate Random Prime (genprime.js)
+- Conway's Game of Life (cgof.js)
