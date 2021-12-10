@@ -1,0 +1,14 @@
+# Programs
+- Pseudo-Random Number Generators (prng.js)
+    - Middle square method and linear congruent generator algorithm
+- Cipher (Encryption & Decryption) (cipher.js)
+    - ROT-N cipher and keyword cipher
+- Sorting Algorithms (sort.js)
+    - Algorithms: bubble sort, insertion sort, selection sort, merge sort, and quick sort
+- Search Algorithms (search.js)
+    - Algorithms: sequential search, binary search, find min/max value
+- K-means Clustering Algorithm (kmeans.js)
+- Base64 Encoding and Decoding (base64.js)
+- Generate Random Prime (genprime.js)
+- Conway's Game of Life (cgof.js)
+- Generate and Sum Fibonacci Numbers (fibonacci.js)
