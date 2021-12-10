@@ -20,7 +20,7 @@ function get_primes(min, max) {
             delete result[j];
             j += i;
         }
-        i++;
+        i = i + 1;
     }
     return Object.values(result.slice(min));
 }

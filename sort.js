@@ -15,9 +15,9 @@ function bubble_sort(arr) {
                 // swapping
                 [arr[j + 1],arr[j]] = [arr[j],arr[j + 1]]
             }
-            j++;
+            j = j + 1;
         }
-        i++;
+        i = i + 1;
     }
     return arr;
 }
@@ -39,9 +39,9 @@ function insertion_sort(arr) {
                 // swap
                 [arr[j+1],arr[j]] = [arr[j],arr[j + 1]];
             }
-            j--;
+            j = j - 1;
         }
-        i++;
+        i = i + 1;
     }
   return arr;
 }
@@ -65,7 +65,7 @@ function selection_sort(arr) {
             if (arr[j] < arr[min]) {
                 min = j;
             }
-            j++;
+            j = j + 1;
         }
 
         // compare the indexes
@@ -73,7 +73,7 @@ function selection_sort(arr) {
           // swap
           [arr[i], arr[min]] = [arr[min], arr[i]];
         }
-        i++;
+        i = i + 1;
     }
     return arr;
 }
@@ -93,10 +93,10 @@ function merge(left, right) {
     while (left_index < left.length && right_index < right.length) {
         if (left[left_index] < right[right_index]) {
             result.push(left[left_index]);
-            left_index++;
+            left_index = left_index + 1;
         } else {
             result.push(right[right_index]);
-            right_index++;
+            right_index = right_index + 1;
         }
    }
    return result.concat(left.slice(left_index)).concat(right.slice(right_index));
@@ -145,7 +145,7 @@ function quick_sort(arr) {
         } else {
             right_arr.push(arr[i]);
         }
-        i++;
+        i = i + 1;
     }
 
     return new_arr.concat(quick_sort(left_arr), pivot, quick_sort(right_arr)); 

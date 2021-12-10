@@ -10,7 +10,7 @@ function text_to_binary(text) {
         var bin;
         bin = text[i].charCodeAt().toString(2);
         binary_output.push(Array(8-bin.length+1).join("0") + bin);
-        i++;
+        i = i + 1;
     } 
     return binary_output.join("");
 }
@@ -84,7 +84,7 @@ function base64_to_binary(base64) {
     i = 0;
     while (i < base64_alphabet.length) {
         base64_map[base64_alphabet[i]] = i;
-        i++;
+        i = i + 1;
     }
 
     // get number of ='s and remove them from base64 string
@@ -111,7 +111,7 @@ function base64_to_binary(base64) {
         // if needed, pad start of bin with 0's so that bin is 6 bits long
         bin = "0".repeat(6-bin.length) + bin;
         binary_output = binary_output + bin;
-        i++;
+        i = i + 1;
     }
 
     // remove num_pad_chars*2 from end of binary_output string

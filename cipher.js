@@ -13,7 +13,7 @@ function rotn_cipher(raw_string, n) {
     i = 0;
     while (i < letters.length) {
         letter_map[letters[i]] = i;
-        i++;
+        i = i + 1;
     }
 
     // encrypt/decrypt the string
@@ -36,7 +36,7 @@ function rotn_cipher(raw_string, n) {
         } else {
             cipher_string = cipher_string + raw_letter;
         }
-        j++;
+        j = j + 1;
     }
 
     return cipher_string;
@@ -57,7 +57,7 @@ function keyword_cipher(raw_string, keyword, decrypt=false) {
     i = 0;
     while (i < letters.length) {
         letter_map[letters[i]] = i;
-        i++;
+        i = i + 1;
     }
 
     // encrypt/decrypt the string
@@ -80,7 +80,7 @@ function keyword_cipher(raw_string, keyword, decrypt=false) {
         } else {
             cipher_string = cipher_string + raw_letter;
         }
-        j++;
+        j = j + 1;
     }
 
     return cipher_string;

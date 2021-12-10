@@ -1,4 +1,4 @@
-var MAX_ITERATIONS = 50;
+var MAX_ITERS = 50;
 
 function random_between(min, max) {
     /****************************************************
@@ -23,7 +23,7 @@ function calc_mean_centroid(dataset, start, end) {
     i = 0;
     while (i < features) {
         mean.push(0);
-        i++;
+        i = i + 1;
     }
     i = start;
     while (i < end) {
@@ -31,9 +31,9 @@ function calc_mean_centroid(dataset, start, end) {
         j = 0;
         while (j < features) {
             mean[j] = mean[j] + dataset[i][j] / n;
-            j++;
+            j = j + 1;
         }
-        i++;
+        i = i + 1;
     }
     return mean;
 }
@@ -62,7 +62,7 @@ function get_random_centroids_naive_sharding(dataset, k) {
             end = num_samples;
         }
         centroids.push(calc_mean_centroid(dataset, start, end));
-        i++;
+        i = i + 1;
     }
     return centroids;
 }
@@ -90,7 +90,7 @@ function get_random_centroids(dataset, k) {
         var centroid;
         centroid = [...dataset[centroids_index[i]]];
         centroids.push(centroid);
-        i++;
+        i = i + 1;
     }
     return centroids;
 }
@@ -105,17 +105,17 @@ function compare_centroids(a, b) {
         if (a[i] !== b[i]) {
             return false;
         }
-        i++;
+        i = i + 1;
     }
     return true;
 }
 
-function should_stop(old_centroids, centroids, iterations) {
+function should_stop(old_centroids, centroids, iters) {
     /****************************************************
-    * Return true if algorithm has converged or max iterations
+    * Return true if algorithm has converged or max iters
     * have been reached; else return false
     ****************************************************/
-    if (iterations > MAX_ITERATIONS) {
+    if (iters > MAX_ITERS) {
         return true;
     }
     if (!old_centroids || !old_centroids.length) {
@@ -129,7 +129,7 @@ function should_stop(old_centroids, centroids, iterations) {
         if (!compare_centroids(centroids[i], old_centroids[i])) {
             same_count = false;
         }
-        i++;
+        i = i + 1;
     }
     return same_count;
 }
@@ -145,7 +145,7 @@ function get_distance_sq(a, b) {
     i = 0;
     while (i < a.length) {
         diffs.push(a[i] - b[i]);
-        i++;
+        i = i + 1;
     }
     return diffs.reduce((r, e) => (r + (e * e)), 0);
 }
@@ -164,7 +164,7 @@ function getLabels(dataset, centroids) {
             points: [],
             centroid: centroids[c],
         };
-        c++;
+        c = c + 1;
     }
     // for each element in the dataset, choose the closest centroid
     // make that centroid the element's label
@@ -195,11 +195,11 @@ function getLabels(dataset, centroids) {
                     closest_centroid_index = j;
                 }
             }
-            j++;
+            j = j + 1;
         }
         // add point to centroid labels:
         labels[closest_centroid_index].points.push(a);
-        i++;
+        i = i + 1;
     }
     return labels;
 }
@@ -216,7 +216,7 @@ function get_points_mean(point_list) {
     j = 0;
     while (j < point_list[0].length) {
         means.push(0);
-        j++;
+        j = j + 1;
     }
     var i;
     i = 0;
@@ -228,9 +228,9 @@ function get_points_mean(point_list) {
             var val;
             val = point[j];
             means[j] = means[j] + val / total_points;
-            j++;
+            j = j + 1;
         }
-        i++;
+        i = i + 1;
     }
     return means;
 }
@@ -257,7 +257,7 @@ function recalculate_centroids(dataset, labels, k) {
             new_centroid = get_random_centroids(dataset, 1)[0];
         }
         new_centroid_list.push(new_centroid);
-        k++;
+        k = k + 1;
     }
     return new_centroid_list;
 }
@@ -268,11 +268,11 @@ function kmeans(dataset, k, use_naive_sharding = true) {
     ****************************************************/
     if (dataset.length && dataset[0].length && dataset.length > k) {
         // initialize book keeping variables
-        var iterations;
+        var iters;
         var old_centroids;
         var labels;
         var centroids;
-        iterations = 0;
+        iters = 0;
 
         // initialize centroids randomly
         if (use_naive_sharding) {
@@ -282,10 +282,10 @@ function kmeans(dataset, k, use_naive_sharding = true) {
         }
 
         // run the main k-means algorithm
-        while (!should_stop(old_centroids, centroids, iterations)) {
+        while (!should_stop(old_centroids, centroids, iters)) {
             // save old centroids for convergence test.
             old_centroids = [...centroids];
-            iterations++;
+            iters = iters + 1;
 
             // assign labels to each datapoint based on centroids
             labels = getLabels(dataset, centroids);
@@ -298,14 +298,14 @@ function kmeans(dataset, k, use_naive_sharding = true) {
         i = 0;
         while (i < k) {
             clusters.push(labels[i]);
-            i++;
+            i = i + 1;
         }
         var results;
         results = {
             clusters: clusters,
             centroids: centroids,
-            iterations: iterations,
-            converged: iterations <= MAX_ITERATIONS,
+            iters: iters,
+            converged: iters <= MAX_ITERS,
         };
         return results;
     } else {

@@ -9,7 +9,7 @@ function sequential_search(item, arr) {
         if (arr[i] === item) {
             return i;
         }
-        i++;
+        i = i + 1;
     }
     // item not found
     return -1;
@@ -27,7 +27,7 @@ function find_min_value(arr) {
         if (arr[i] < current_min) {
             current_min = arr[i];
         }
-        i++;
+        i = i + 1;
     }
     return current_min;
 }
@@ -44,7 +44,7 @@ function find_max_value(arr) {
         if (arr[i] > current_max) {
             current_max = arr[i];
         }
-        i++;
+        i = i + 1;
     }
     return current_max;
 }
