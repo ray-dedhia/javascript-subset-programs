@@ -86,4 +86,5 @@ test();
 /****************************************************
 * Sources:
 * - https://stackoverflow.com/questions/1322732/convert-seconds-to-hh-mm-ss-with-javascript
+* - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 ****************************************************/
