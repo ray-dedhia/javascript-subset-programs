@@ -16,3 +16,4 @@
     - Return nth prime number, and check if number is prime
 - Timer (`timer.js`)
 - Get next twin prime (`twinprime.js`)
+- Program for Goldbach's Conjecture (`goldbachconj.js`)
