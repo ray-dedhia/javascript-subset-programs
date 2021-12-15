@@ -29,7 +29,7 @@ function is_prime2(num) {
     var max_check;
     max_check = Math.floor(Math.sqrt(num) + 1);
     // check if num is divisible by all numbers check_div
-    // in range 2 <= check_div < num
+    // in range 2 <= check_div < max_check
     while (check_div < max_check) {
         // if it is, return false
         if (num % check_div == 0) {

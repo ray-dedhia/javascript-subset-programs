@@ -15,3 +15,4 @@
 - Get Nth Prime (`prime.js`)
     - Return nth prime number, and check if number is prime
 - Timer (`timer.js`)
+- Get next twin prime (`twinprime.js`)
