@@ -14,3 +14,4 @@
 - Generate and Sum Fibonacci Numbers (fibonacci.js)
 - Get Nth Prime (prime.js)
     - Return nth prime number, and check if number is prime
+- Timer (timer.js)
