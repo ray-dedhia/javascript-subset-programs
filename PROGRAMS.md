@@ -9,11 +9,12 @@
     - Algorithms: sequential search, binary search, find min/max value
 - K-means Clustering Algorithm (`kmeans.js`)
 - Base64 Encoding and Decoding (`base64.js`)
-- Generate Random Prime (`randprime.js`)
+- Generate Random Prime (`rand-prime.js`)
 - Conway's Game of Life (`cgof.js`)
 - Generate and Sum Fibonacci Numbers (`fibonacci.js`)
 - Get Nth Prime (`prime.js`)
     - Return nth prime number, and check if number is prime
 - Timer (`timer.js`)
-- Get next twin prime (`twinprime.js`)
-- Program for Goldbach's Conjecture (`goldbachconj.js`)
+- Get next twin prime (`twin-prime.js`)
+- Program for Goldbach's Conjecture (`goldbach-conj.js`)
+- Convert text to braille (`braille.js`)
