@@ -1,20 +1,51 @@
 # Programs
-- Pseudo-Random Number Generators (`prng.js`)
-    - Middle square method and linear congruent generator algorithm
-- Cipher (Encryption & Decryption) (`cipher.js`)
-    - ROT-N cipher and keyword cipher
-- Sorting Algorithms (`sort.js`)
-    - Algorithms: bubble sort, insertion sort, selection sort, merge sort, and quick sort
-- Search Algorithms (`search.js`)
-    - Algorithms: sequential search, binary search, find min/max value
-- K-means Clustering Algorithm (`kmeans.js`)
-- Base64 Encoding and Decoding (`base64.js`)
-- Generate Random Prime (`rand-prime.js`)
-- Conway's Game of Life (`cgof.js`)
-- Generate and Sum Fibonacci Numbers (`fibonacci.js`)
-- Get Nth Prime (`prime.js`)
-    - Return nth prime number, and check if number is prime
-- Timer (`timer.js`)
-- Get next twin prime (`twin-prime.js`)
-- Program for Goldbach's Conjecture (`goldbach-conj.js`)
-- Convert text to braille (`braille.js`)
+- /prngs
+    - Middle square method (`msm.js`)
+    - Test: `msm-test.js`
+    - Linear congruent generator algorithm (`lcg.js`)
+    - Test: `lcg-test.js`
+- /sorting_algs
+    - Bubble sort, insertion sort, selection sort, merge sort, and quick sort (`sort.js`)
+    - Test: `sort-test.js`
+- /convert
+    - Convert text to braille (`braille-conversion.js`)
+    - Test: `braille-conversion-test.js`
+    - Convert text to binary or hexadecimal (`text-to-binary-hex.js`)
+    - Test: `text-to-binary-hex-text.js`
+    - Base64 Encoding and Decoding (`base64-enc-dec.js`)
+    - Test: `base64-enc-dec-test.js`
+- /search    
+    - Sequential search (`seq-search.js`)
+    - Test: `seq-search-test.js`
+    - Sequential search (`binary-search.js`)
+    - Test: `binary-search-test.js`
+    - Sequential search (`find-minval.js`)
+    - Test: `find-minval-test.js`
+    - Sequential search (`find-maxval.js`)
+    - Test: `find-maxval-test.js`
+- /cipher
+    - ROT-N cipher (`rotn-cipher.js`)
+    - Test: `rotn-cipher-test.js`
+    - Keyword cipher (`keyword-cipher.js`)
+    - Test: `keyword-cipher-test.js`
+- /primes
+    - Generate Random Prime (`rand-prime.js`)
+    - Test: `rand-prime-test.js`
+    - Check if Prime (`is-prime.js`)
+    - Test: `is-prime-test.js`
+    - Get Nth Prime (`nth-prime.js`)
+    - Test: `nth-prime-test.js`
+    - Get next twin prime (`twin-prime.js`)
+    - Test: `twin-prime-test.js`
+    - Program for Goldbach's Conjecture (`goldbach-conj.js`)
+    - Test: `goldback-conj-test.js`
+- /time
+    - Conway's Game of Life (`cgol.js`)
+    - Run: `cgol-run.js`
+    - Timer (`timer.js`)
+    - Run: `timer-run.js`
+- /other
+    - K-means Clustering Algorithm (`kmeans.js`)
+    - Test: `kmeans-test.js`
+    - Generate and Sum Fibonacci Numbers (`fibonacci.js`)
+    - Test: `fibonacci-test.js`

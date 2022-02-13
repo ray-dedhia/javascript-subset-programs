@@ -1,15 +1,5 @@
-function sleep(ms) {
-    /****************************************************
-    * Pause for ms milliseconds
-    ****************************************************/
-    var date;
-    date = Date.now();
-    var curr_date;
-    curr_date = null;
-    while(curr_date - date < ms) {
-        curr_date = Date.now();
-    }
-}
+var sleep;
+sleep = require("./sleep.js");
 
 function print_board(rows, cols, grid) {
     /****************************************************
@@ -171,8 +161,8 @@ function randomize_board(rows, cols, grid, next_grid) {
     return [grid, next_grid];
 }
 
-
-function start_cgol(rows, cols) {
+var start_cgol;
+start_cgol = function(rows, cols) {
     /****************************************************
     * Start Conway's Game of Life
     ****************************************************/
@@ -209,9 +199,4 @@ function start_cgol(rows, cols) {
     }
 }
 
-start_cgol(40, 80);
-
-/****************************************************
-* Sources:
-* - https://codepen.io/RBSpatz/pen/rLyNLb
-****************************************************/
+module.exports = { start_cgol };

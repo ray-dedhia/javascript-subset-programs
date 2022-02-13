@@ -262,7 +262,8 @@ function recalculate_centroids(dataset, labels, k) {
     return new_centroid_list;
 }
 
-function kmeans(dataset, k, use_naive_sharding = true) {
+var kmeans;
+kmeans = function(dataset, k, use_naive_sharding = true) {
     /****************************************************
     * K-means clustering algorithm
     ****************************************************/
@@ -313,24 +314,4 @@ function kmeans(dataset, k, use_naive_sharding = true) {
     }
 }
 
-function test() {
-    var data;
-    data = [[1, 1, 1], [1, 2, 1], [-1, -1, -1], [-1, -1, -1.5], [-1, -1, -1.5]];
-    console.log("Data = " + JSON.stringify(data));
-
-    var k;
-    k = 2;
-    console.log("K = " + k);
-
-    var result
-    result = kmeans(data, 2);
-    console.log("Results = " + JSON.stringify(result));
-}
-
-test();
-
-/****************************************************
-* Sources:
-* - https://medium.com/geekculture/implementing-k-means-clustering-from-scratch-in-javascript-13d71fbcb31e
-- https://www.kdnuggets.com/2017/03/naive-sharding-centroid-initialization-method.html
-****************************************************/
+module.exports = { kmeans };

@@ -1,16 +1,5 @@
-function sleep(ms) {
-    /****************************************************
-    * Pause for ms milliseconds
-    ****************************************************/
-    var date;
-    date = Date.now();
-    var curr_date;
-    curr_date = null;
-    while(curr_date - date < ms) {
-        curr_date = Date.now();
-    }
-    return "Done";
-}
+var sleep;
+sleep = require("./sleep.js");
 
 function time_to_secs(time_string) {
     /****************************************************
@@ -58,7 +47,8 @@ function print_time(time_string, seconds_left) {
     console.log("Time left = " + time_passed);
 }
 
-function timer(time_string) {
+var timer;
+timer = function(time_string) {
     /****************************************************
     * Timer
     ****************************************************/
@@ -72,19 +62,9 @@ function timer(time_string) {
     while (s < secs+1) {
         print_time(time_string, secs-s);
         s = s + 1;
-        sleep(1000);
+        sleep(1000, true);
     }
     console.log("Timer over");
 }
 
-function test() {
-    timer("00:00:10");
-}
-
-test();
-
-/****************************************************
-* Sources:
-* - https://stackoverflow.com/questions/1322732/convert-seconds-to-hh-mm-ss-with-javascript
-* - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
-****************************************************/
+module.exports = { timer };

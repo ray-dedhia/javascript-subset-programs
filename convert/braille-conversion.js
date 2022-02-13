@@ -125,7 +125,8 @@ function get_char_type(c) {
     return 'LC';
 }
 
-function text_to_braille(text) {
+var text_to_braille;
+text_to_braille = function(text) {
     /****************************************************
     * Convert text to braille 
     ****************************************************/
@@ -195,10 +196,11 @@ function text_to_braille(text) {
         i = i + 1;
     }
 
-    return braille;
+    return braille.substring(0, braille.length-1); // remove ending space
 }
 
-function braille_to_text(braille) {
+var braille_to_text;
+braille_to_text = function(braille) {
     /****************************************************
     * Convert braille to text
     ****************************************************/
@@ -265,20 +267,10 @@ function braille_to_text(braille) {
         i = i + 1;
     }
 
-    return text;
+    return text.substring(0, text.length-1); // remove ending space
 }
 
-function test() {
-    var text1;
-    text1 = "This is a test.";
-    var braille1;
-    braille1 = text_to_braille(text1);
-    console.log(text1);
-    console.log(braille1);
-
-    var text2;
-    text2 = braille_to_text(braille1);
-    console.log(text2);
+module.exports = {
+    text_to_braille,
+    braille_to_text
 }
-
-test();

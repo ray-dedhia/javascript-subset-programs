@@ -15,7 +15,7 @@ function get_primes(min, max) {
     i = 2;
     while (i <= Math.sqrt(max + 1)) {
         var j;
-        j = 1 ** 2;
+        j = i ** 2;
         while (j < max + 1) {
             delete result[j];
             j += i;
@@ -25,7 +25,8 @@ function get_primes(min, max) {
     return Object.values(result.slice(min));
 }
 
-function get_random_prime([min, max]) {
+var get_random_prime;
+get_random_prime = function([min, max]) {
     /****************************************************
     * Return random prime number in range [min, max] (inclusive)
     ****************************************************/
@@ -34,15 +35,4 @@ function get_random_prime([min, max]) {
     return primes[get_random_num(0, primes.length - 1)];
 }
 
-function test() {
-    var range;
-    range = [100, 1000];
-    console.log(get_random_prime(range));
-}
-
-test();
-
-/****************************************************
-* Sources:
-* - https://www.tutorialspoint.com/generating-random-prime-number-in-javascript
-****************************************************/
+module.exports = { get_random_prime };

@@ -120,7 +120,8 @@ function base64_to_binary(base64) {
     return binary_output;
 }
 
-function base64_encode(text) {
+var base64_encode;
+base64_encode = function(text) {
     /****************************************************
     * Convert text to Base64
     ****************************************************/
@@ -131,7 +132,8 @@ function base64_encode(text) {
     return base64;
 }
 
-function base64_decode(base64) {
+var base64_decode;
+base64_decode = function(base64) {
     /****************************************************
     * Convert Base64 to text
     ****************************************************/
@@ -142,22 +144,4 @@ function base64_decode(base64) {
     return text;
 }
 
-function test() {
-    var text;
-    text = "!a";
-    var encoded;
-    encoded = base64_encode(text);
-    var decoded = base64_decode(encoded);
-    console.log("Original text: " + text);
-    console.log("Encoded to Base64: " + encoded);
-    console.log("Decoded Base64 text: " + decoded);
-}
-
-test();
-
-/****************************************************
-* Sources:
-* - https://stackoverflow.com/questions/14430633/how-to-convert-text-to-binary-code-in-javascript
-* - https://stackoverflow.com/questions/11103487/how-to-convert-binary-representation-of-number-from-string-to-integer-number-in
-* - https://www.base64encoder.io/learn/
-****************************************************/
+module.exports = { base64_encode, base64_decode };

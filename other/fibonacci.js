@@ -1,4 +1,5 @@
-function gen_fibonacci(max) {
+var gen_fibonacci;
+gen_fibonacci = function(max) {
     /****************************************************
     * Return all Fibonacci numbers less than or equal to max
     ****************************************************/
@@ -18,7 +19,8 @@ function gen_fibonacci(max) {
     return fib_list;
 }
 
-function sum_even_fibonacci(max) {
+var sum_even_fibonacci;
+sum_even_fibonacci = function(max) {
     /****************************************************
     * Return sum of all even Fibonacci numbers less than max
     ****************************************************/
@@ -37,7 +39,8 @@ function sum_even_fibonacci(max) {
     return sum;
 }
 
-function sum_odd_fibonacci(max) {
+var sum_odd_fibonacci;
+sum_odd_fibonacci = function(max) {
     /****************************************************
     * Return sum of all odd Fibonacci numbers less than max
     ****************************************************/
@@ -60,7 +63,8 @@ function add(accum, a) {
     return accum + a;
 }
 
-function sum_fibonacci(max) {
+var sum_fibonacci;
+sum_fibonacci = function(max) {
     /****************************************************
     * Return sum of all Fibonacci numbers less than max
     ****************************************************/
@@ -71,11 +75,4 @@ function sum_fibonacci(max) {
     return sum;
 }
 
-function test() {
-    console.log(gen_fibonacci(200));
-    console.log(sum_even_fibonacci(200));
-    console.log(sum_odd_fibonacci(200));
-    console.log(sum_fibonacci(200));
-}
-
-test();
+module.exports = { gen_fibonacci, sum_even_fibonacci, sum_odd_fibonacci, sum_fibonacci };

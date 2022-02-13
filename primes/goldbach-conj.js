@@ -30,7 +30,8 @@ function sieve_sundaram(MAX, primes) {
     return primes;
 }
  
-function goldback_conjecture(n, MAX=10000) {
+var goldbach_conjecture;
+goldbach_conjecture = function(n, MAX=10000) {
     /****************************************************
     * Express a given even integer greater than 2 as the
     * sum of two primes (strong or binary Goldbach conjecture). 
@@ -68,16 +69,5 @@ function goldback_conjecture(n, MAX=10000) {
     console.log("Warning: Solution not found. Increase MAX (" + MAX + ") to find a solution.");
     return [null, null];
 }
- 
-function test() {
-    console.log("4 = sum(" + goldback_conjecture(4) + ")");
-    console.log("38 = sum(" + goldback_conjecture(38) + ")");
-    console.log("100 = sum(" + goldback_conjecture(100) + ")");
-}
 
-test();
-
-/****************************************************
-* Sources:
-* - https://www.geeksforgeeks.org/program-for-goldbachs-conjecture-two-primes-with-given-sum/
-****************************************************/
+module.exports = { goldbach_conjecture };
